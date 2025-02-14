@@ -30,13 +30,6 @@ public class InputsUser {
         System.out.print("\nDigite o tipo do produto (ex: Líquido, Grão, Outro): ");
         return scanner.nextLine(); 
     }
-    // Obter a quantidade de produtos
-    public int quantidadeProdutos() {
-        System.out.print("\nDigite a quantidade de produtos: ");
-        int quantidade = scanner.nextInt();
-        scanner.nextLine(); 
-        return quantidade;
-    }
     // Obter a quantidade de litros
     public String LitrosProduto() {
         System.out.print("\nDigite a quantidade de litros: ");

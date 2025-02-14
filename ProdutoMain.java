@@ -1,36 +1,44 @@
+import java.util.ArrayList;
+
 public class ProdutoMain {
     public static void main(String[] args) {
         InputsUser inputsUser = new InputsUser();
         int produtosPraCadastrar = inputsUser.obterQuantidade();
 
+        ArrayList<Produtos> listaProdutos = new ArrayList<>(); // Criando o array para armazenar produtos
+
         for (int i = 0; i < produtosPraCadastrar; i++) {
             System.out.println("\n Cadastro do Produto " + (i + 1));
 
-            // Obter os dados do produto
             String nome = inputsUser.NomeProduto();
             String tipo = inputsUser.TipoProduto();
             String tipoProduto = tipo.toUpperCase();
             double preco = inputsUser.PrecoProduto();
 
+
             boolean liquido = tipoProduto.equals("LIQUIDO");
-            double quantidadeProdutos;
+            double litrosProdutos;
 
-            // Obter a quantidade de produtos
             if (liquido) {
-                quantidadeProdutos = Double.parseDouble(inputsUser.LitrosProduto()); 
+                litrosProdutos = Double.parseDouble(inputsUser.LitrosProduto());
             } else {
-                quantidadeProdutos = Double.parseDouble(inputsUser.KilosProduto()); 
+                litrosProdutos = Double.parseDouble(inputsUser.KilosProduto());
             }
+
             Produtos produto;
-            // Criar o objeto do produto
             if (liquido) {
-                produto = new Liquidos(nome, tipo, preco, (int) quantidadeProdutos);
+                produto = new Liquidos(nome, tipo, preco, (int) litrosProdutos);
             } else {
-                produto = new Kilos(nome, tipo, preco, (int) quantidadeProdutos);
+                produto = new Kilos(nome, tipo, preco, (int) litrosProdutos);
             }
 
+            listaProdutos.add(produto); 
+        }
 
-            produto.imprimir();
+
+        System.out.println("\n===== Lista de Produtos Cadastrados =====");
+        for (Produtos p : listaProdutos) {
+            p.imprimir();
         }
     }
 }
