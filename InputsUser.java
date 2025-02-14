@@ -10,13 +10,13 @@ public class InputsUser {
     public int obterQuantidade() {
         System.out.print("Seja bem-vindo à parte de cadastramento de produtos no seu mercado\nQuantos produtos deseja cadastrar? ");
         int quantidade = scanner.nextInt();
-        scanner.nextLine(); // ✅ Consumir a quebra de linha pendente
+        scanner.nextLine(); 
         return quantidade;
     }
 
     public String NomeProduto() {
         System.out.print("\nDigite o nome do produto: ");
-        return scanner.nextLine(); // ✅ Agora lê corretamente o nome
+        return scanner.nextLine(); 
     }
 
     public double PrecoProduto() {
