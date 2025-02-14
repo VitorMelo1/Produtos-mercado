@@ -6,7 +6,7 @@ public class Produtos {
     double precoProduto;
     double quantidadeProduto;
     double litrosProduto;
-
+    // Construtor da classe Produtos
     public Produtos(String nomeProduto, String tipoProduto, double precoProduto,int quantidadeProduto) {
         this.nomeProduto = nomeProduto;
         this.tipoProduto = tipoProduto;
@@ -14,7 +14,7 @@ public class Produtos {
         this.quantidadeProduto = quantidadeProduto;
     }
 
-
+    // Método para imprimir os dados do produto
     public void imprimir() {
         System.out.println("************************************");
         System.out.println("Produto Cadastrado com sucesso!");
