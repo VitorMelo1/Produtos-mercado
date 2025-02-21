@@ -12,30 +12,27 @@ public class ProdutoMain {
 
             String nome = inputsUser.NomeProduto();
             String tipo = inputsUser.TipoProduto();
-            String tipoProduto = tipo.toUpperCase();
             double preco = inputsUser.PrecoProduto();
+            boolean liquido = tipo.equalsIgnoreCase("LIQUIDO");
 
-
-            boolean liquido = tipoProduto.equals("LIQUIDO");
-            double litrosProdutos;
-
+            double quantidadeProdutos;
             if (liquido) {
-                litrosProdutos = Double.parseDouble(inputsUser.LitrosProduto());
+                quantidadeProdutos = Double.parseDouble(inputsUser.LitrosProduto());
             } else {
-                litrosProdutos = Double.parseDouble(inputsUser.KilosProduto());
+                quantidadeProdutos = Double.parseDouble(inputsUser.KilosProduto());
             }
 
             Produtos produto;
             if (liquido) {
-                produto = new Liquidos(nome, tipo, preco, (int) litrosProdutos);
+                produto = new Liquidos(nome, tipo, preco, quantidadeProdutos);
             } else {
-                produto = new Kilos(nome, tipo, preco, (int) litrosProdutos);
+                produto = new Kilos(nome, tipo, preco, quantidadeProdutos);
             }
 
-            listaProdutos.add(produto); 
+            listaProdutos.add(produto); // Adicionando à lista
         }
 
-
+        // Exibir todos os produtos cadastrados no final
         System.out.println("\n===== Lista de Produtos Cadastrados =====");
         for (Produtos p : listaProdutos) {
             p.imprimir();

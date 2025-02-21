@@ -1,5 +1,5 @@
 public class Liquidos extends Produtos {
-        public Liquidos(String nomeProduto, String tipoProduto, double precoProduto, int litrosProduto) {
-            super(nomeProduto, tipoProduto, precoProduto, litrosProduto);
-        }
+    public Liquidos(String nomeProduto, String tipoProduto, double precoProduto, double quantidadeProduto) {
+        super(nomeProduto, tipoProduto, precoProduto, quantidadeProduto);
+    }
 }
